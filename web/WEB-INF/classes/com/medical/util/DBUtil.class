@@ -1,0 +1,134 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+package com.medical.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class DBUtil {
+    private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
+    private static final String CON_URL = "jdbc:mysql://47.102.122.171:3306/mybaota?serverTimezone=UTC&characterEncoding=utf-8";
+    private static final String USER_NAME = "mybaota";
+    private static final String PASS_WORD = "123456";
+    private Connection con = null;
+    private PreparedStatement preparedStatement = null;
+    private ResultSet resultSet = null;
+
+    public DBUtil() {
+    }
+
+    private void init(String sql, Object... args) throws ClassNotFoundException, SQLException {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            this.con = DriverManager.getConnection("jdbc:mysql://47.102.122.171:3306/mybaota?serverTimezone=UTC&characterEncoding=utf-8", "mybaota", "123456");
+            this.preparedStatement = this.con.prepareStatement(sql);
+            if (args != null) {
+                for(int index = 0; index < args.length; ++index) {
+                    this.preparedStatement.setObject(index + 1, args[index]);
+                }
+            }
+        } catch (ClassNotFoundException var4) {
+            var4.printStackTrace();
+        } catch (SQLException var5) {
+            var5.printStackTrace();
+        }
+
+    }
+
+    public List<Map<String, Object>> select(String sql, Object... args) {
+        ResultSetMetaData metaData;
+        try {
+            this.init(sql, args);
+            this.resultSet = this.preparedStatement.executeQuery();
+            List<Map<String, Object>> list = new ArrayList();
+            metaData = this.resultSet.getMetaData();
+            int columnCount = metaData.getColumnCount();
+
+            while(this.resultSet.next()) {
+                Map<String, Object> map = new HashMap();
+
+                for(int col = 1; col <= columnCount; ++col) {
+                    String columnName = metaData.getColumnName(col);
+                    map.put(columnName, this.resultSet.getObject(col));
+                }
+
+                list.add(map);
+            }
+
+            ArrayList var16 = list;
+            return var16;
+        } catch (ClassNotFoundException var13) {
+            var13.printStackTrace();
+            metaData = null;
+            return metaData;
+        } catch (SQLException var14) {
+            var14.printStackTrace();
+            metaData = null;
+        } finally {
+            this.closeAll();
+        }
+
+        return metaData;
+    }
+
+    public int update(String sql, Object... args) {
+        byte var4;
+        try {
+            this.init(sql, args);
+            int flag = this.preparedStatement.executeUpdate();
+            int var12 = flag;
+            return var12;
+        } catch (ClassNotFoundException var9) {
+            var9.printStackTrace();
+            var4 = -1;
+            return var4;
+        } catch (SQLException var10) {
+            var10.printStackTrace();
+            var4 = -1;
+        } finally {
+            this.closeAll();
+        }
+
+        return var4;
+    }
+
+    private void closeAll() {
+        try {
+            if (this.resultSet != null) {
+                this.resultSet.close();
+            }
+
+            if (this.preparedStatement != null) {
+                this.preparedStatement.close();
+            }
+
+            if (this.con != null) {
+                this.con.close();
+            }
+        } catch (SQLException var2) {
+            var2.printStackTrace();
+        }
+
+    }
+
+    public static List<Map<String, Object>> exeQuery(String sql, Object... args) {
+        DBUtil util = new DBUtil();
+        return util.select(sql, args);
+    }
+
+    public static int exeUpdate(String sql, Object... args) {
+        DBUtil util = new DBUtil();
+        return util.update(sql, args);
+    }
+}

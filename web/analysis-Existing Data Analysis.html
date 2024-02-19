@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCNMA-analysis-Existing Data Analysis</title>
+    <script src="js/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style-home.css">
+    <link rel="stylesheet" href="style-analysis.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--头部区域开始-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(image/background1.png);">
+                <!-- logo部分 -->
+                <span class="logo">
+                    <img src="image/logo1.png" alt="logo" width="50" height="100" style="margin-right: -15px;">
+                    <img src="image/logo3ccc.gif" alt="logo" width="60" height="75"  style="margin-right: -15px;">
+                    <img src="image/ap1.png" alt="logo" width="45" height="95"  style="margin-right: -15px;">
+                    <img src="image/logo5.png" alt="logo" width="60" height="100"  style="margin-right: -15px;">
+                    <img src="image/pg2.png" alt="logo" width="55" height="100"  style="margin-right: -15px;">
+                </span>
+                <div class="htcbm">
+                    <h2>Human Cancer Noninvasive Diagnosis miRNA Fingerprint Atlas</h2>
+                </div>
+                <div class="DNA">
+
+                    <!-- --d为自定义属性，CSS中可通过var函数对其调用 -->
+
+                    <div class="line" style="--d:1;"><span></span></div>
+
+                    <div class="line" style="--d:2;"><span></span></div>
+
+                    <div class="line" style="--d:3;"><span></span></div>
+
+                    <div class="line" style="--d:4;"><span></span></div>
+
+                    <div class="line" style="--d:5;"><span></span></div>
+
+                    <div class="line" style="--d:6;"><span></span></div>
+
+                    <div class="line" style="--d:7;"><span></span></div>
+
+                    <div class="line" style="--d:8;"><span></span></div>
+
+                    <div class="line" style="--d:9;"><span></span></div>
+
+                    <div class="line" style="--d:10;"><span></span></div>
+
+                    <div class="line" style="--d:11;"><span></span></div>
+
+                    <div class="line" style="--d:12;"><span></span></div>
+
+                </div>
+                <!--导航栏部分-->
+                <div class="mynav">
+                    <ul class="nav nav-pills">
+                        <li><a href="home.html#" class="nav"><span></span>HOME</a></li>
+                        <li class="dropdown">
+                            <a class=" nav dropbtn"><span></span>SEARCH<span class="caret"></span></a>
+                            <ul class="dropdown-content dropdown-menu">
+                                <li><a href="search-by%20marker.html">By marker</a></li>
+                                <li><a href="search-by%20disease.html">By disease</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="browse.html" class="nav"><span></span>BROWSE</a></li>
+                        <li class="dropdown">
+                            <a class=" nav dropbtn"  style="color: rgb(2, 55, 58);"><span></span>ANALYSIS<span
+                                class="caret"></span></a>
+                            <ul class="dropdown-content dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                              <li role="presentation">
+                                <a href="analysis-Existing%20Data%20Analysis.html">Existing Data Analysis</a>
+                              </li>
+                              <!-- <li role="presentation">
+                                <a href="analysis-Datasets.html">Dataset Analysis</a>
+                              </li> -->
+                            </ul>
+                          </li>
+                        <li><a href="download.html" class="nav"><span></span>DOWNLOAD</a></li>
+                        <li><a href="statistics.html" class="nav"><span></span>STATISTICS</a></li>
+                        <li><a href="help.html" class="nav"><span></span>HELP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--头部区域结束-->
+    <!--analysis start-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                <div class="card panel panel-default" style="margin-top: 50px;margin-bottom: 50px;">
+                    <div class="cardf panel-body">
+                        <h1>Existing Data Analysis</h1>
+                        <br>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+
+                                <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-3 fa form-horizontal">
+                                    <div class="col-md-8 col-sm-8 col-xs-8 form-group">
+                                        <label class="control-label fm " for="ByMarker">Marker</label>
+                                        <input type="marker" class="form-control input-lg" id="ByMarker"
+                                            placeholder="hsa−miR−139−5p，hsa−miR−342−5p, hsa−miR−486−5p，etc.">
+                                        <p class="pa">You are advised to select one or some of them. If you do not enter
+                                            a value, all of
+                                            them are displayed by default. </p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-8 col-sm-8 col-xs-8">
+                                            <label  class="control-label fm" for="markersMethods">Marker's methods</label>
+                                            <select id="markersMethods" class="form-control">
+                                                <option></option>
+                                                <option>ROC</option>
+                                                <option>Cluster</option>
+                                                <option>GO</option>
+                                                <option>KEGG</option>
+                                                <option>Decision Tree</option>
+                                                <option>Expression bar graph</option>
+                                                <option>Expression box graph</option>
+                                                <option>Entropy weight</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group"></div>
+                                        <label id="source" class="control-label fm">&emsp;source</label>&emsp;&emsp;&emsp;
+                                        <label class="radio-inline">
+                                            <input type="radio" name="source" id="source1" value="Tissue"> Tissue
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="source" id="source2" value="Blood"> Blood
+                                        </label>
+                                    </div>
+                                    <div class="col-md-8 col-sm-8 col-xs-8 form-group">
+                                        <label class="control-label fm ">Disease</label>
+                                        <input type="marker" class="form-control input-lg" id="ByDisease"
+                                            placeholder="BRCA">
+                                        <p class="pa">You are advised to select one or some of them. If you do not enter
+                                            a value, all of
+                                            them are displayed by default. </p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-8 col-sm-8 col-xs-8">
+                                            <label class="control-label fm" for="diseasesMethods">Disease's methods</label>
+                                            <select id="diseasesMethods" class="form-control">
+                                                <option></option>
+                                                <option>Heatmap (multi markers)</option>
+                                                <option>Survival Analysis</option>
+                                                <option>Differental Expressed miRNAs</option>
+                                                <option>Pie chart (multi markers)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div
+                                            class="col-md-offset-3 col-md-10 col-sm-offset-3 col-sm-10 col-xs-offset-3 col-xs-10">
+                                            <div id="submit" type="submit" class="submit btn btn-default btn-lg">SUBMIT</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+<script>
+    $("#submit").click(function() {
+        let marker = $("#ByMarker").val();
+        let disease = $("#ByDisease").val();
+        let source = $("input[name='source']:checked").val();
+        let markersMethods = $("#markersMethods").val();
+        let diseasesMethods = $("#diseasesMethods").val()
+        console.log(source);
+        let predata = {
+            url: './analysisAll',
+            data: {
+                "marker": marker,
+                "disease": disease,
+                "source":source,
+                "markersMethods":markersMethods,
+                "diseasesMethods":diseasesMethods
+            },
+            dataType: "json",
+            type: "get",
+            success: function (data) {
+                console.log(data)
+                if (data.result != null) {
+                    sessionStorage.setItem("marker", JSON.stringify(data));
+                    window.location.href = "./analysis-submit.html"
+                } else {
+                    alert("暂无数据")
+                }
+            }
+        };
+        $.ajax(predata)
+    })
+
+    // $("diseasesMethods").on("change", function () {
+    //     let a = $("diseasesMethods").val()
+    //     console.log(a)
+    //     if (a === "") {
+    //         $("#markersMethods").removeAttr("disabled")
+    //     } else {
+    //         $("#markersMethods").attr("disabled", "disabled")
+    //     }
+    // })
+
+</script>
+</html>

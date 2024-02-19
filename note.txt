@@ -1,0 +1,8 @@
+定义类的命名方式
+Student
+课程-学生对应
+CourseStudent
+
+对象，变量
+驼峰命名法
+public Object queryCourseById(){}

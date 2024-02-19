@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background-color: rgb(235 249 246);
+    background-image: radial-gradient(closest-side, rgb(136 237 212), rgba(213, 251, 253, 0)), radial-gradient(closest-side, rgb(90 195 163), rgba(122, 194, 166, 0)), radial-gradient(closest-side, rgb(63 205 166), rgba(91, 196, 182, 0)), radial-gradient(closest-side, rgb(117 218 223), rgba(101, 164, 180, 0)), radial-gradient(closest-side, rgb(167 220 237), rgba(60, 133, 175, 0));
+    background-size: 
+      130vmax 130vmax,
+      80vmax 80vmax,
+      90vmax 90vmax,
+      110vmax 110vmax,
+      90vmax 90vmax;
+    background-position:
+      -80vmax -80vmax,
+      60vmax -30vmax,
+      10vmax 10vmax,
+      -30vmax -10vmax,
+      50vmax 50vmax;
+    background-repeat: no-repeat;
+    animation: 5s movement linear infinite;
+  }
+  
+  body::after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  @keyframes movement {
+    0%, 100% {
+      background-size: 
+        130vmax 130vmax,
+        80vmax 80vmax,
+        90vmax 90vmax,
+        110vmax 110vmax,
+        90vmax 90vmax;
+      background-position:
+        -80vmax -80vmax,
+        60vmax -30vmax,
+        10vmax 10vmax,
+        -30vmax -10vmax,
+        50vmax 50vmax;
+    }
+    25% {
+      background-size: 
+        100vmax 100vmax,
+        90vmax 90vmax,
+        100vmax 100vmax,
+        90vmax 90vmax,
+        60vmax 60vmax;
+      background-position:
+        -60vmax -90vmax,
+        50vmax -40vmax,
+        0vmax -20vmax,
+        -40vmax -20vmax,
+        40vmax 60vmax;
+    }
+    50% {
+      background-size: 
+        80vmax 80vmax,
+        110vmax 110vmax,
+        80vmax 80vmax,
+        60vmax 60vmax,
+        80vmax 80vmax;
+      background-position:
+        -50vmax -70vmax,
+        40vmax -30vmax,
+        10vmax 0vmax,
+        20vmax 10vmax,
+        30vmax 70vmax;
+    }
+    75% {
+      background-size: 
+        90vmax 90vmax,
+        90vmax 90vmax,
+        100vmax 100vmax,
+        90vmax 90vmax,
+        70vmax 70vmax;
+      background-position:
+        -50vmax -40vmax,
+        50vmax -30vmax,
+        20vmax 0vmax,
+        -10vmax 10vmax,
+        40vmax 60vmax;
+    }
+  }
+
+
+.download{
+    /* 弹性布局 允许换行 水平居中 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 70px;
+}
+.box1{
+    width: 350px;
+    height: 400px;
+    margin: 10px;
+    text-align: center;
+    /* 相对定位 */
+    position: relative;
+    /* 开启3D效果 */
+    transform-style: preserve-3d;
+    /* 设置视距 */
+    perspective: 3000px;
+}
+.box1 .front{
+    background: -webkit-linear-gradient(#78c8cd, rgb(21 130 155));
+    width: 100%;
+    height: 400px;
+    border-radius: 7px;
+    /* 弹性布局 垂直排列 垂直居中 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 阴影 */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    /* 设置过渡 */
+    transition: 0.5s ease;
+}
+
+.box1 .front span{
+    /* 渐变背景 */
+    background: -webkit-linear-gradient(rgb(244, 247, 246),rgb(159 211 194));
+    /* 以区块内的文字作为裁剪区域向外裁剪，文字的背景即为区块的背景，文字之外的区域都将被裁剪掉 */
+    -webkit-background-clip: text;
+    /* 将文字透明镂空 */
+    -webkit-text-fill-color: transparent;
+}
+
+.box1 .front span,
+.box1 .back span{
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: initial;
+}
+.box1 .back{
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 400px;
+    border-radius: 7px;
+    background: linear-gradient(220deg,#7ac9a0,#5db4d9);
+    padding: 30px;
+    color: #fff;
+    /* 默认不透明度为0 */
+    opacity: 0;
+    /* 默认位置下移并沿Y轴旋转-90度 */
+    transform: translateY(110px) rotateX(-90deg);
+    /* 设置过渡 */
+    transition: 0.5s ease;
+}
+.box1 .back p{
+    margin-top: 100px;
+    margin-left: -20px;
+    font-size: 30px;
+    /* 文本两端对齐 */
+    text-align: center;
+}
+.box1 .back p a {
+    font-size: 25px;
+    color: white;
+    margin-top: 100px;
+    /* 文本两端对齐 */
+    text-align: center;
+}
+/* 鼠标移入卡片，两个面做出相应的变化 */
+.box1 .back p a:hover {
+    color: rgb(2, 55, 58)
+}
+.box1:hover .front{
+    opacity: 0;
+    transform: translateY(-110px) rotateX(90deg);
+}
+.box1:hover .back{
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}

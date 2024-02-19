@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HCNMA-statistic</title>
+  <script src="echarts.js"></script>
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style-home.css">
+  <link rel="stylesheet" href="style-stastics.css">
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!--头部区域开始-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(image/background1.png);">
+        <!-- logo部分 -->
+        <span class="logo">
+          <img src="image/logo1.png" alt="logo" width="50" height="100" style="margin-right: -15px;">
+          <img src="image/logo3ccc.gif" alt="logo" width="60" height="75"  style="margin-right: -15px;">
+          <img src="image/ap1.png" alt="logo" width="45" height="95"  style="margin-right: -15px;">
+          <img src="image/logo5.png" alt="logo" width="60" height="100"  style="margin-right: -15px;">
+          <img src="image/pg2.png" alt="logo" width="55" height="100"  style="margin-right: -15px;">
+      </span>
+        <div class="htcbm">
+          <h2>Human Cancer Noninvasive Diagnosis miRNA Fingerprint Atlas</h2>
+        </div>
+        <div class="DNA">
+
+          <!-- --d为自定义属性，CSS中可通过var函数对其调用 -->
+
+          <div class="line" style="--d:1;"><span></span></div>
+
+          <div class="line" style="--d:2;"><span></span></div>
+
+          <div class="line" style="--d:3;"><span></span></div>
+
+          <div class="line" style="--d:4;"><span></span></div>
+
+          <div class="line" style="--d:5;"><span></span></div>
+
+          <div class="line" style="--d:6;"><span></span></div>
+
+          <div class="line" style="--d:7;"><span></span></div>
+
+          <div class="line" style="--d:8;"><span></span></div>
+
+          <div class="line" style="--d:9;"><span></span></div>
+
+          <div class="line" style="--d:10;"><span></span></div>
+
+          <div class="line" style="--d:11;"><span></span></div>
+
+          <div class="line" style="--d:12;"><span></span></div>
+
+        </div>
+        <!--导航栏部分-->
+        <div class="mynav">
+          <ul class="nav nav-pills">
+            <li><a href="home.html#" class="nav"><span></span>HOME</a></li>
+            <li class="dropdown">
+              <a class=" nav dropbtn"><span></span>SEARCH<span class="caret"></span></a>
+              <ul class="dropdown-content dropdown-menu">
+                <li><a href="search-by%20marker.html">By marker</a></li>
+                <li><a href="search-by%20disease.html">By disease</a></li>
+              </ul>
+            </li>
+            <li><a href="browse.html" class="nav"><span></span>BROWSE</a></li>
+            <li class="dropdown">
+              <a class=" nav dropbtn"><span></span>ANALYSIS<span
+                  class="caret"></span></a>
+              <ul class="dropdown-content dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation">
+                  <a href="analysis-Existing%20Data%20Analysis.html">Existing Data Analysis</a>
+                </li>
+                <!-- <li role="presentation">
+                  <a href="analysis-Datasets.html">Dataset Analysis</a>
+                </li> -->
+              </ul>
+            </li>
+            <li><a href="download.html" class="nav"><span></span>DOWNLOAD</a></li>
+            <li><a href="statistics.html" class="nav" style="color: rgb(2, 55, 58);"><span></span>STATISTICS</a></li>
+            <li><a href="help.html" class="nav"><span></span>HELP</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--头部区域结束-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+
+        <div class="row card">
+
+          <div>
+            <div class="chart1 col-md-5 col-sm-5 col-xs-5" id="main"></div>
+            <div class="chart2 col-md-5 col-sm-5 col-xs-5" id="main2"></div>
+          </div>
+
+
+
+          <div class="chart3 col-md-12 col-sm-12 col-xs-12" id="main3"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    option = {
+      backgroundColor: '#3cab99',
+      title: {
+        text: '32 cancer types and sample number',
+        left: 'center',
+
+        textStyle: {
+          color: '#ffffff'
+        }
+      },
+
+      tooltip: {
+        trigger: 'item'
+      },
+      visualMap: {
+        show: false,
+        min: 80,
+        max: 600,
+        inRange: {
+        }
+      },
+      series: [
+        {
+          name: 'Cancer',
+          type: 'pie',
+          center: ['50%', '50%'],
+          itemStyle: {
+            normal: {
+              label: {
+                textStyle: {
+                  color: 'white',
+                }
+              },
+              labelLine: {
+                lineStyle: {
+                  color: 'white'
+                }
+              }
+            }
+          },
+          data: [
+            {
+              value: 71,
+              name: 'ACC'
+            },
+            {
+              value: 384,
+              name: 'BLCA'
+            },
+            {
+              value: 286,
+              name: 'BRCA'
+            },
+            {
+              value: 287,
+              name: 'CESC'
+            },
+            {
+              value: 27,
+              name: 'CHOL'
+            },
+            {
+              value: 577,
+              name: 'COAD'
+            },
+            {
+              value: 63,
+              name: 'DLBC'
+            },
+            {
+              value: 155,
+              name: 'ESCA'
+            },
+            {
+              value: 653,
+              name: 'GBM'
+            },
+            {
+              value: 459,
+              name: 'HNSC'
+            },
+            {
+              value: 131,
+              name: 'KICH'
+            },
+            {
+              value: 703,
+              name: 'KIRC'
+            },
+            {
+              value: 316,
+              name: 'KIRP'
+            },
+            {
+              value: 200,
+              name: 'LAML'
+            },
+            {
+              value: 647,
+              name: 'LGG'
+            },
+            {
+              value: 357,
+              name: 'LIHC'
+            },
+            {
+              value: 616,
+              name: 'LUAD'
+            },
+            {
+              value: 569,
+              name: 'LUSC'
+            },
+            {
+              value: 49,
+              name: 'MESO'
+            },
+            {
+              value: 670,
+              name: 'OV'
+            },
+            {
+              value: 175,
+              name: 'PAAD'
+            },
+            {
+              value: 153,
+              name: 'PCPG'
+            },
+            {
+              value: 508,
+              name: 'PRAD'
+            },
+            {
+              value: 201,
+              name: 'READ'
+            },
+            {
+              value: 327,
+              name: 'SARC'
+            },
+            {
+              value: 389,
+              name: 'SKCM'
+            },
+            {
+              value: 198,
+              name: 'TGCT'
+            },
+            {
+              value: 574,
+              name: 'THCA'
+            },
+            {
+              value: 150,
+              name: 'THYM'
+            },
+            {
+              value: 320,
+              name: 'UCEC'
+            },
+            {
+              value: 25,
+              name: 'USC'
+            },
+            {
+              value: 116,
+              name: 'UVM'
+            }
+          ]
+        }
+      ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+
+
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main2'));
+
+    // 指定图表的配置项和数据
+
+
+    option = {
+      tooltip: {},
+      dataset: {
+        source: [
+          ['score', 'amount', 'product'],
+          [7.1, 71, 'ACC'],
+          [38.4, 384, 'BLCA'],
+          [28.6, 286, 'BRCA'],
+          [28.7, 287, 'CESC'],
+          [2.7, 27, 'CHOL'],
+          [57.7, 577, 'COAD'],
+          [6.3, 63, 'DLBC'],
+          [15.5, 155, 'ESCA'],
+          [65.3, 653, 'GBM'],
+          [45.9, 459, 'HNSC'],
+          [13.1, 131, 'KICH'],
+          [70.3, 703, 'KIRC'],
+          [31.6, 316, 'KIRP'],
+          [20.0, 200, 'LAML'],
+          [64.7, 647, 'LGG'],
+          [35.7, 357, 'LIHC'],
+          [61.6, 616, 'LUAD'],
+          [56.9, 569, 'LUSC'],
+          [4.9, 49, 'MESO'],
+          [67.0, 670, 'OV'],
+          [17.5, 175, 'PAAD'],
+          [15.3, 153, 'PCPG'],
+          [50.8, 508, 'PRAD'],
+          [20.1, 201, 'READ'],
+          [32.7, 327, 'SARC'],
+          [38.9, 389, 'SKCM'],
+          [19.8, 198, 'TGCT'],
+          [57.4, 574, 'THCA'],
+          [15.0, 150, 'THYM'],
+          [32.0, 320, 'UCEC'],
+          [2.5, 25, 'USC'],
+          [11.6, 116, 'UVM']
+        ]
+      },
+      grid: { containLabel: true },
+      xAxis: {
+        name: 'amount',
+        axisLine: {
+          lineStyle: {
+            color: 'white',
+          }
+        }
+      },
+      yAxis: {
+        type: 'category',
+        axisLine: {
+          lineStyle: {
+            color: 'white',
+          }
+        }
+      },
+      visualMap: {
+        orient: 'horizontal',
+        left: 'center',
+        top: 540,
+        min: 10,
+        max: 100,
+        text: ['High Score', 'Low Score'],
+        // Map the score column to color
+        dimension: 0,
+        inRange: {
+          color: ['#FFF0BA','#edaa53', '#aa3c16']
+        },
+        textStyle: {
+          color: '#ffffff',
+        }
+      },
+      series: [
+        {
+          type: 'bar',
+          encode: {
+            // Map the "amount" column to X axis.
+            x: 'amount',
+            // Map the "product" column to Y axis
+            y: 'product'
+          }
+        }
+      ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+
+
+  <script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main3'));
+
+    // 指定图表的配置项和数据
+    const pathSymbols = {
+    };
+
+    option = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'none'
+        },
+        formatter: function (params) {
+          return params[0].name + ': ' + params[0].value;
+        }
+      },
+      xAxis: {
+        data: ['ACC', 'BLCA', 'BRCA', 'CESC', 'CHOL', 'COAD', 'DLBC', 'ESCA', 'GBM', 'HNSC', 'KICH', 'KIRC', 'KIRP', 'LAML', 'LGG', 'LIHC', 'LUAD', 'LUSC', 'MESO', 'OV', 'PAAD', 'PCPG', 'PRAD', 'READ', 'SARC', 'SKCM', 'TGCT', 'THCA', 'THYM', 'UCEC', 'UCS', 'UVM'],
+        axisTick: { show: false },
+        axisLine: { show: false },
+        axisLabel: {
+          color: '#fff'
+        }
+      },
+      yAxis: {
+        splitLine: { show: false },
+        axisTick: { show: false },
+        axisLine: { show: false },
+        axisLabel: { show: false }
+      },
+      color: ['#60daff'],
+      series: [
+        {
+          name: 'hill',
+          type: 'pictorialBar',
+          barCategoryGap: '-130%',
+          // symbol: 'path://M0,10 L10,10 L5,0 L0,10 z',
+          symbol: 'path://M0,10 L10,10 C5.5,10 5.5,5 5,0 C4.5,5 4.5,10 0,10 z',
+          itemStyle: {
+            opacity: 0.5
+          },
+          emphasis: {
+            itemStyle: {
+              opacity: 1
+            }
+          },
+          data: [71, 384, 286, 287, 27, 577, 63, 155, 653, 459, 131, 703, 316, 200, 647, 357, 616, 569, 49, 670, 175, 153, 508, 201, 327, 389, 198, 574, 150, 320, 25, 116],
+          z: 10
+        },
+        {
+          name: 'glyph',
+          type: 'pictorialBar',
+          barGap: '-100%',
+          symbolPosition: 'end',
+          symbolSize: 50,
+          symbolOffset: [0, '-120%'],
+          data: [
+            { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }, { value: 1, symbolSize: [0, 0] }
+
+          ]
+        }
+      ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+</body>
+
+</html>

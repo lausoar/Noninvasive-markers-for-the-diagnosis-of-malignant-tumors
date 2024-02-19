@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCTBM-search-submit result</title>
+    <script src="js/jquery-3.6.0.js">
+    </script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style-home.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style-submit_result.css">
+</head>
+
+<body>
+    <!--头部区域开始-->
+    <div class="container-fluid-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="background-image:url(image/background1.png);">
+                <!-- logo部分 -->
+                <span class="logo">
+                    <img src="image/logo1.png" alt="logo" width="50" height="100" style="margin-right: -15px;">
+                    <img src="image/logo3ccc.gif" alt="logo" width="60" height="75"  style="margin-right: -15px;">
+                    <img src="image/logo3.png" alt="logo" width="40" height="100"  style="margin-right: -15px;">
+                    <img src="image/logo4.png" alt="logo" width="40" height="100"  style="margin-right: -15px;">
+                    <img src="image/logo5.png" alt="logo" width="60" height="100"  style="margin-right: -15px;">
+                </span>
+                <div class="htcbm">
+                    <h2>Human Cancer Tissue-Blood MicroRNA Database</h2>
+                </div>
+                <div class="DNA">
+
+                    <!-- --d为自定义属性，CSS中可通过var函数对其调用 -->
+
+                    <div class="line" style="--d:1;"><span></span></div>
+
+                    <div class="line" style="--d:2;"><span></span></div>
+
+                    <div class="line" style="--d:3;"><span></span></div>
+
+                    <div class="line" style="--d:4;"><span></span></div>
+
+                    <div class="line" style="--d:5;"><span></span></div>
+
+                    <div class="line" style="--d:6;"><span></span></div>
+
+                    <div class="line" style="--d:7;"><span></span></div>
+
+                    <div class="line" style="--d:8;"><span></span></div>
+
+                    <div class="line" style="--d:9;"><span></span></div>
+
+                    <div class="line" style="--d:10;"><span></span></div>
+
+                    <div class="line" style="--d:11;"><span></span></div>
+
+                    <div class="line" style="--d:12;"><span></span></div>
+
+                </div>
+                <!--导航栏部分-->
+                <div class="mynav">
+                    <ul class="nav nav-pills">
+                        <li><a href="home.html#" class="nav"><span></span>HOME</a></li>
+                        <li class="dropdown">
+                            <a class=" nav dropbtn" style="color: rgb(2, 55, 58);"><span></span>SEARCH<span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-content dropdown-menu">
+                                <li><a href="search-by%20marker.html">By marker</a></li>
+                                <li><a href="search-by%20disease.html">By disease</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="browse.html" class="nav"><span></span>BROWSE</a></li>
+                        <li class="dropdown">
+                            <a class=" nav dropbtn"><span></span>ANALYSIS<span
+                                class="caret"></span></a>
+                            <ul class="dropdown-content dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                              <li role="presentation">
+                                <a href="analysis-Existing%20Data%20Analysis.html">Existing Data Analysis</a>
+                              </li>
+                              <!-- <li role="presentation">
+                                <a href="analysis-Datasets.html">Dataset Analysis</a>
+                              </li> -->
+                            </ul>
+                          </li>
+                        <li><a href="download.html" class="nav"><span></span>DOWNLOAD</a></li>
+                        <li><a href="statistics.html" class="nav"><span></span>STATISTICS</a></li>
+                        <li><a href="help.html" class="nav"><span></span>HELP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--头部区域结束-->
+    <!--submit result start-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="card panel panel-default" style="margin-top: 50px;margin-bottom: 50px;">
+                    <div class="cardf panel-body">
+                        <h1 class="h"><span class="glyphicon glyphicon-file"></span>Search result</h1>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td class="column">Name</td>
+                                        <td id="name"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column">Source</td>
+                                        <td id="source"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column">Disease</td>
+                                        <td id="disease"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column">Experimental method</td>
+                                        <td id="experimental"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column">Predicted method</td>
+                                        <td id="Predicted"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column">SNP location</td>
+                                        <td  id="SNP"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column">Target Gene</td>
+                                        <td id="Target"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column">Pubmedid</td>
+                                        <td  id="Pubmedid"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="column">Description</td>
+                                        <td id="description"></td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--submit result end-->
+</body>
+<script>
+    let dataStr = sessionStorage.getItem("marker");
+
+    let data = JSON.parse(dataStr);
+    console.log(data);
+    $("#name").append(data.result.Name);
+    $("#source").append(data.result.Source);
+    $("#disease").append(data.result.Disease);
+    $("#experimental").append(data.result.Experimental_method);
+    $("#Predicted").append(data.result.Predicted_method);
+    $("#SNP").append(data.result.SNP_location);
+    $("#Target").append(data.result.Target_Gene);
+    $("#Pubmedid").append(data.result.PubMed_ID);
+    $("#description").append(data.result.Description);
+</script>
+</html>

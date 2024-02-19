@@ -1,0 +1,315 @@
+ * {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.logo {
+  margin-left: 60px;
+  width: 50px;
+  height: 110px;
+}
+
+.htcbm {
+  position: absolute;
+  left: 390px;
+  top: 2px;
+  font-family: Montserrat;
+  font-size: 25px;
+  overflow: hidden;
+  color: #fff;
+
+
+}
+.htcbm h2{
+  color: transparent;
+  font-size: 20px;
+  background: linear-gradient(to right,#349b91,#fff,#2e958f);
+  -webkit-background-clip: text;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  animation: move 6s linear infinite;
+}
+@keyframes move{
+  0%{
+    background-position: -500%;
+  }
+  100%{
+    background-position: 500%;
+  }
+}
+
+.DNA{
+  position: absolute;
+  left: 15px;
+  top: 0px;
+  width: 90px;
+  height: 150px;
+  /* 开启3D效果 */
+  transform-style: preserve-3d;
+  /* 定义3D元素距视图的距离 */
+  perspective: 1000px;
+  /* 沿Z轴旋转15度 */
+  transform: rotateZ(15deg);
+}
+.DNA .line{
+  width: 52px;
+  height: 10px;
+  /* 绝对定位 */
+  position: absolute;
+  /* 结合自定义属性--d，计算top */
+  top: calc(8px * var(--d));
+  /* 执行动画：动画名 时长 线性 无限播放 */
+  animation: roll 3s linear infinite;
+  /* 结合自定义属性--d，计算动画延迟时间 */
+  animation-delay: calc(0.2s * var(--d));
+}
+/* 两边两个圆的统一样式 */
+.DNA .line::before,.DNA .line::after{
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+/* 左圆 */
+.DNA .line::before{
+  background-color: #df8b8b;
+  position: absolute;
+  left: 5px;
+}
+/* 右圆 */
+.DNA .line::after{
+  background-color: #8cc4d3;
+  position: absolute;
+  right: 10px;
+}
+/* 中间的线 */
+.DNA .line span{
+  width: 28px;
+  height: 1.5px;
+  background-color: #fff;
+  position: absolute;
+  left: 10px;
+  top: 2px;
+}
+/* 定义旋转动画 */
+@keyframes roll {
+  100%{
+      transform: rotateY(360deg);
+  }
+}
+
+/*导航栏部分*/
+.nav {
+  color: #ffffff;
+  font-size: 15px;
+  font-family: Poppins;
+}
+.nav span {
+  font-family: 'icomoon';
+  font-size: 25px;
+}
+.nav ul li {
+  font-size: 16px;
+transition: 0.5s;
+}
+.mynav ul:hover li {
+opacity: 0.3;
+filter: blur(0px);
+}
+.mynav ul li:hover {
+opacity: 1;
+filter: blur(0px);
+} 
+.nav:hover {
+  color: rgb(2, 55, 58);
+}
+
+.mynav {
+  position: absolute;
+  left: 385px;
+  top: 50px;
+}
+.dropbtn {
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.h5 {
+  color: #000;
+}
+.dropdown-content {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-left: -15px;
+  position: absolute;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-menu {
+  display: none;
+  padding: 10px;
+  margin-top: -10px;
+  margin-left: -30px;
+  position: absolute;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {color: rgb(2, 55, 58);}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+/*banner part*/
+.bg {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 50%;
+    /* border: 1px solid wheat; */
+    filter: drop-shadow(-0.2px 1px rgba(0, 0, 0, 0.6));
+  }
+  .box {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    clip-path: polygon(0 -140px, 153px 315px, -34px 203px, 0 200px);
+    cursor: pointer;
+    vertical-align: text-bottom;
+    border: none;
+  }
+  .wenzi {
+      font-size: 20px;
+      color: rgb(71, 72, 73);
+      text-indent: -9em;
+  }
+  .box-overlap {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: drop-shadow(-0.4px 2px rgba(0, 0, 0, 0.5));
+  }
+  .box:hover {
+    margin-top: -10px;
+   }
+
+.carousel {
+  margin-top: 80px;
+  margin-left: 42px;
+  width: 685px;
+  height: 362px;
+}
+.carousel-inner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 685px;
+  height: 362px;
+}
+.carousel-inner img {
+  width: 685px;
+  height: 400px;
+}
+.carouselp {
+  font-size: 30px;
+  position: absolute;
+  top: 240px;
+  left: -250px;
+}
+/*passage*/
+.pap {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 6px;
+  -webkit-transition: all 250ms cubic-bezier(0.02, 0.01, 0.47, 1); 
+  transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+  }
+  .pap:hover {
+    
+    transform: translate(0,-15px);
+    
+    transition-delay: 0s !important;
+    
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .2);
+
+border-color: #eee;
+
+transition: all .2s ease-in-out;
+    }
+    
+    .box-shadow {
+    
+    -webkit-box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15);
+    
+    box-shadow: 0 4px 16px rgba(48, 55, 66, 0.15);
+    
+    }
+p {
+    font-size: 18px;
+    line-height: 30px;
+    text-indent: 2rem;
+    text-align: left;
+}
+.toph {
+  font-size: 35px;
+  font-family: 华文新魏;
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(-2px 1px rgba(226, 221, 221, 0.6));
+}
+/*links*/
+.linkpic ul {
+  margin-left: 150px;
+}
+.linkpic ul li {
+    float: left;
+    margin: 15px 15px;
+}
+/*字体图标*/
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?jn08e');
+    src:  url('fonts/icomoon.eot?jn08e#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?jn08e') format('truetype'),
+      url('fonts/icomoon.woff?jn08e') format('woff'),
+      url('fonts/icomoon.svg?jn08e#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  span {
+    font-family: 'icomoon';
+    font-size: 30px;
+  }
+
+  

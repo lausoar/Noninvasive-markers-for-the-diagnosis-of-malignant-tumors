@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 华文新魏;
+    font-weight: bold;
+    color: white;
+    
+}
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+.fa {
+    margin-top: 50px;
+ 
+    font-size: 20px;
+    line-height: 25px;
+}
+.fm {
+    font-size: 25px;
+    font-family: Arial Rounded MT Bold;
+    line-height: 30px;
+    border-left-color: rgb(15, 15, 15);
+    border-left-width: 2px;
+    margin-bottom: 50px;
+}
+
+.submit {
+    background: -webkit-linear-gradient(rgb(51 154 145),rgb(159 211 194));
+    color: aliceblue;
+}
+.cardf {    
+    background: -webkit-linear-gradient(left,rgb(39 140 140),rgb(131 211 185));
+    
+}
+.card {
+    
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .15)
+    
+    }
+    
+    .card:hover {
+    
+    box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, .25);
+    
+    transition: all .2s ease-in-out;
+    
+    }
+.pa {
+    font-size: 15px;
+    color: rgb(114, 110, 110);
+}
+.la {
+    font-size: 24px;
+    font-family: Calibri;
+    color: rgb(57, 58, 58);
+}

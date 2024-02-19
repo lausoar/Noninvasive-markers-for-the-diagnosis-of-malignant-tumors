@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: -webkit-linear-gradient(left,rgb(219, 238, 233),rgb(139, 201, 186));
+}
+h1 {
+    font-family: 华文新魏;
+    font-size: 30px;
+    font-weight: bold;
+    color:white;
+}
+.show {
+    height: 600px;
+    overflow-y: scroll;
+}
+.show a {
+    color: black;
+    font-size: 20px;
+}
+
+/*滚动条样式*/
+.show::-webkit-scrollbar {
+    width: 10px;    
+    /*height: 4px;*/
+}
+.show::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.2);
+    background-color: #68b8ad;
+    ;
+}
+.show::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+
+}
+.show a:hover {
+    color: rgb(148, 98, 5);
+}
+.show li:hover{
+    background-color: rgb(224, 222, 222);
+}
+
+  
+
+

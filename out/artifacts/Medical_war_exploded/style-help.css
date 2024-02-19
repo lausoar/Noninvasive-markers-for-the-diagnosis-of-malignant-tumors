@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 华文新魏;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    
+}
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+.fa {
+    margin-top: 25px;
+ 
+    font-size: 20px;
+    line-height: 25px;
+}
+.fm {
+    font-size: 25px;
+    font-family: Arial Rounded MT Bold;
+    line-height: 30px;
+    border-left-color: rgb(15, 15, 15);
+    border-left-width: 2px;
+    margin-bottom: 50px;
+}
+
+.submit {
+    background: -webkit-linear-gradient(rgb(51 154 145),rgb(159 211 194));
+    color: aliceblue;
+    position: relative;
+    top: 159px;
+    left: -300px;
+}
+.cardf {    
+    background: -webkit-linear-gradient(left,rgb(39 140 140),rgb(131 211 185));
+    
+}
+.cards {
+    background: -webkit-linear-gradient(left,rgb(39 140 140),rgb(131 211 185));
+    margin-top: -34px;
+}
+
+.card {
+    
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .15)
+    
+    }
+    
+    .card:hover {
+    
+    box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, .25);
+    
+    transition: all .2s ease-in-out;
+    
+    }
+.paf {
+    font-size: 10px;
+    color: rgb(114, 110, 110);
+}
+.pas {
+    font-size: 15px;
+    color: white;
+    font-family: 'Calibri';
+}
+.la {
+    font-size: 24px;
+    font-family: Calibri;
+    color: rgb(57, 58, 58);
+}
+/*流程图*/
+.chart {
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.pic {
+    width: 145px;
+    height: 72px;
+}
+.text {
+    width: 122px;
+    height: 50px;
+    position: relative;
+    top: 19px;
+    left: 14px;
+}
+.arrow {
+    width: 3px;
+    height: 50px;
+    position: relative;
+    top: 15px;
+    left: 65px;
+    background-color: rgb(222 190 218);
+}
+.arrow1 {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 1px;
+    left: 59px;
+    border-top: 3px solid rgb(222 190 218);
+    border-right: 3px solid rgb(222 190 218);
+    transform: rotate(135deg);
+  }
+  .arrow2 {
+    float: left;
+    width: 50px;
+    height: 3px;
+    position: relative;
+    top: 50px;
+    left: 8px;
+    background-color: rgb(60 176 175);
+}
+.arrow3 {
+    float: left;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 44px;
+    left: -6px;
+    border-top: 3px solid rgb(60 176 175);
+    border-right: 3px solid rgb(60 176 175);
+    transform: rotate(45deg);
+  }
+  .arrow4 {
+    width: 3px;
+    height: 50px;
+    position: relative;
+    top: 2px;
+    left: 1060px;
+    background-color: rgb(222 190 218);
+}
+.arrow5 {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: -12px;
+    left: 1054px;
+    border-top: 3px solid rgb(222 190 218);
+    border-right: 3px solid rgb(222 190 218);
+    transform: rotate(135deg);
+  }
+.tree {
+    margin-left: 16px;
+}
+.pic1 {
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.pic2 {
+    width: 145px;
+    height: 72px;
+    position: relative;
+    top: 3px;
+    left: 995px;
+}
+.text1 {
+    width: 75px;
+    height: 56px;
+    position: relative;
+    top: 20px;
+    left: 14px;
+}
+

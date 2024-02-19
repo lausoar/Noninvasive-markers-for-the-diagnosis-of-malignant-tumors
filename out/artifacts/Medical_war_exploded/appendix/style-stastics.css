@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.card
+{
+    margin-top: 40px;
+    margin-bottom: 60px;
+
+    border-radius: 6px;
+    background-color: #3cab99;
+    box-shadow: 8px 8px 0px #0e3130, -8px -8px 0px #81c7c0;
+}
+.chart1 {
+    margin-top: 20px;
+    width: 600px;
+    height: 600px;
+}
+.chart2 {
+    width: 550px;
+    height: 600px;
+}
+.chart3 {
+    margin-top: -45px;
+    margin-left: -70px;
+    width: 1300px;
+    height: 400px;
+}

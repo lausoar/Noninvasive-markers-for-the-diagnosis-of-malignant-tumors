@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: white;
+    font-family: 华文新魏;
+    font-weight: bold;
+}
+.fa {
+    margin-top: 50px;
+    font-size: 20px;
+    line-height: 25px;
+}
+.fm {
+    font-size: 25px;
+    font-family: Arial Rounded MT Bold;
+    line-height: 30px;
+}
+.submit {
+    background: -webkit-linear-gradient(rgb(51 154 145),rgb(159 211 194));
+    color: aliceblue;
+}
+.cardf {    
+    background: -webkit-linear-gradient(left,rgb(99 203 168), rgb(18 111 131));
+    
+}
+.card {
+    
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .15)
+    
+    }
+    
+    .card:hover {
+    
+    box-shadow: 5px 10px 10px 0 rgba(0, 0, 0, .25);
+    
+    transition: all .2s ease-in-out;
+    
+    }
